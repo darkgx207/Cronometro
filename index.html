@@ -33,29 +33,30 @@
     let min = 00;
     let sec = 00;
     let cond = 'yes';
-    let ligado = 'no';
-
+    let ligado = false;
     
 
-
     function timer() {
+        ligado = true;
         clearInterval(inter);
         inter = setInterval(contar,1000);
-        ligado = 'yes';
+        onAndOFf();
+        
     }
 
     function limpar() {
+        ligado = false;
         clearInterval(inter);
         sec = 0;
         hour,min,sec = 00,00,00 ;
         cont.innerText = `${hour}:${min}:${sec}`;
+        onAndOFf();
          
     }
         
 
     function contar() {
         if(cond === 'yes') {
-            
 
             if(sec === 60) {
             sec = 0; min++; }
@@ -65,15 +66,18 @@
 
             sec++;
             cont.innerText = `${hour}:${min}:${sec}`;
-
+            
             }
         }
-   
-        if(ligado==='yes') {
-        const btn = document.getElementById('start');
-        btn.attributes = 'disable = "true"';
-        console.log('fuck');
-    }
+    function onAndOFf(){
+        var botao = document.getElementById('start') ;
+        
+        if(ligado===true) {
+           botao.classList.add('ligado');
+       } if(ligado===false) {
+        botao.classList.remove('ligado');
+       }
+   }
 
 </script>
 </body>

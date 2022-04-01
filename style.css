@@ -111,3 +111,12 @@ button:hover {
     background: linear-gradient(60deg,rgb(104, 96, 175),rgb(18, 191, 221));
     color:#ffffff;
 }
+.ligado {
+    animation: ativo 2s;
+    animation-iteration-count: infinite;
+}
+@keyframes ativo {
+    50% {
+        transform: scale(1.2);
+    }
+}
