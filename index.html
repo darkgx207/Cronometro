@@ -18,7 +18,7 @@
             </div>
             <div class="btnframe">
                 <button id="start" onclick="timer();">Start</button>
-                <button id="stop">Stop</button>
+                <button id="stop" onclick="parar();">Stop</button>
                 <button id="clear" onclick="limpar();">Clear</button>
             </div>
         </div>
@@ -27,15 +27,18 @@
     </div>
 
 <script>
+    // Declarações
     let cont = document.getElementById('contador');
     let inter;
     let hour = 00;
     let min = 00;
     let sec = 00;
-    let cond = 'yes';
     let ligado = false;
-    
+    let paused = false;
+    let vsec,vmin,vhour;
 
+
+    // FUNÇÃO POR BOTÃO
     function timer() {
         ligado = true;
         clearInterval(inter);
@@ -46,38 +49,58 @@
 
     function limpar() {
         ligado = false;
+        paused = false;
         clearInterval(inter);
         sec = 0;
         hour,min,sec = 00,00,00 ;
         cont.innerText = `${hour}:${min}:${sec}`;
         onAndOFf();
-         
     }
-        
 
-    function contar() {
-        if(cond === 'yes') {
+    function parar() {
+        ligado = false;
+        paused = true;
+        clearInterval(inter);
+        onAndOFf();
+    }
 
-            if(sec === 60) {
-            sec = 0; min++; }
-
-            if(min===60) {
-                sec = 0; min = 0; hour++; }
-
-            sec++;
-            cont.innerText = `${hour}:${min}:${sec}`;
-            
-            }
-        }
+    // Verificador de Estado    
     function onAndOFf(){
         var botao = document.getElementById('start') ;
-        
+        var bstop = document.getElementById('stop');
         if(ligado===true) {
            botao.classList.add('ligado');
-       } if(ligado===false) {
+        } if(ligado===false) {
         botao.classList.remove('ligado');
-       }
-   }
+        if(paused===true){ 
+            bstop.classList.add('pausado');
+        } else {
+            bstop.classList.remove('pausado');
+        }
+    }
+}
+
+// Contador
+    function contar() {
+        
+
+            if(sec === 60) { sec = 0; min++; }
+            if(min===60) { sec = 0; min = 0; hour++; }
+
+            if(sec<10){vsec = '0'+sec}
+            if(sec>10){vsec = sec}
+
+            if(min<10){vmin = '0'+min}
+            if(min>10){vmin = min}
+
+            if(hour<10){vhour = '0'+hour}
+            if(hour>10){vhour = hour}
+
+            sec++;
+            cont.innerText = `${vhour}:${vmin}:${vsec}`;
+            
+            }
+        
 
 </script>
 </body>

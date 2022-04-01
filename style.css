@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=BIZ+UDMincho&display=swap');
 * {
     margin: 0;
     padding: 0 ;
+    font-family: 'BIZ UDMincho', serif;
 }
 body {
     overflow: hidden;
@@ -53,6 +55,7 @@ backdrop-filter: blur(5px);
 .button > a {
     text-decoration: none;
     color : rgb(15, 207, 89);
+
 }
 
 .button {
@@ -72,6 +75,8 @@ backdrop-filter: blur(5px);
 .button:hover {
     background: #0dc20d;
     box-shadow: 0px 4px 4px rgba(11, 167, 230, 0.733), inset 10px 10px 100px 10px rgba(255, 255, 255, 0.55);
+    animation: ativo 2s;
+    animation-iteration-count: infinite;
     
 }
 #screenframe > p {
@@ -110,10 +115,19 @@ button:hover {
     filter: brightness(1.2);
     background: linear-gradient(60deg,rgb(104, 96, 175),rgb(18, 191, 221));
     color:#ffffff;
+    transition: 1s;
 }
 .ligado {
     animation: ativo 2s;
     animation-iteration-count: infinite;
+    background: linear-gradient(60deg,rgb(104, 96, 175),rgb(18, 191, 221));
+    filter: brightness(1.5);
+}
+.pausado {
+    animation: ativo 2s;
+    animation-iteration-count: infinite;
+    background: linear-gradient(60deg,rgb(214, 67, 92),rgb(226, 157, 53));
+    filter: brightness(1.5);
 }
 @keyframes ativo {
     50% {
