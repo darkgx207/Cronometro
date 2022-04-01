@@ -51,9 +51,9 @@
         ligado = false;
         paused = false;
         clearInterval(inter);
-        sec = 0;
-        hour,min,sec = 00,00,00 ;
-        cont.innerText = `${hour}:${min}:${sec}`;
+        hour=0;min=0;sec=0;
+        hhmmss();
+        cont.innerText = `${vhour}:${vmin}:${vsec}`;
         onAndOFf();
     }
 
@@ -82,25 +82,24 @@
 
 // Contador
     function contar() {
-        
-
-            if(sec === 60) { sec = 0; min++; }
-            if(min===60) { sec = 0; min = 0; hour++; }
-
-            if(sec<10){vsec = '0'+sec}
-            if(sec>10){vsec = sec}
-
-            if(min<10){vmin = '0'+min}
-            if(min>10){vmin = min}
-
-            if(hour<10){vhour = '0'+hour}
-            if(hour>10){vhour = hour}
-
+            hhmmss();
             sec++;
             cont.innerText = `${vhour}:${vmin}:${vsec}`;
-            
-            }
-        
+    }
+
+    function hhmmss() {
+        if(sec === 60) { sec = 0; min++; }
+        if(min===60) { sec = 0; min = 0; hour++; }
+
+        if(sec<10){vsec = '0'+sec}
+        if(sec>10){vsec = sec}
+
+        if(min<10){vmin = '0'+min}
+        if(min>10){vmin = min}
+
+        if(hour<10){vhour = '0'+hour}
+        if(hour>10){vhour = hour}
+    }
 
 </script>
 </body>
