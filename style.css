@@ -12,7 +12,7 @@ body {
 position: absolute;
 width: 100%;
 height: 99vh;
-background: linear-gradient(90deg, #0b0b0c, #17073b);
+background: linear-gradient(90deg, #5757af, #17073b);
 mix-blend-mode: darken;
 border: 1px solid #000000;
 box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -69,7 +69,7 @@ backdrop-filter: blur(5px);
     left: 5vw;   
     justify-content: center;
     align-items: center;
-    
+    cursor: pointer;
 }
 
 .button:hover {
@@ -89,7 +89,8 @@ backdrop-filter: blur(5px);
     background-color: #71dbdf63;
     justify-content: center;
     margin: 0 auto;
-    top:-20vh;
+    top:-15vh;
+    padding: 5px;
 }
 .btnframe {
     position: relative;
@@ -99,7 +100,7 @@ backdrop-filter: blur(5px);
     display: flex;
     flex-direction: row;
     margin: 0 auto;
-    border-radius: 20px;
+    border-radius: 10px;
     border: 1px solid lightgreen;
 }
 .btnframe > button {
@@ -126,11 +127,18 @@ button:hover {
 .pausado {
     animation: ativo 2s;
     animation-iteration-count: infinite;
-    background: linear-gradient(60deg,rgb(214, 67, 92),rgb(226, 157, 53));
+    background: linear-gradient(60deg,rgb(214, 67, 92),rgb(221, 140, 18));
     filter: brightness(1.5);
 }
 @keyframes ativo {
+    20% {
+        transform: scale(1.1);
+    }
     50% {
-        transform: scale(1.2);
+        transform: scale(0.98);
+        
+    }
+    60% {
+        transform: translateY(-5px);
     }
 }

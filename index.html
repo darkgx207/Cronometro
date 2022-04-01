@@ -10,7 +10,7 @@
 <body>
     <div class="container">
         <header>
-            <div class="button"><a href="#">HOME</a></div>
+            <div class="button" onclick="alert('No momento ainda não possuo funcionalidade')"><a href="#">HOME</a></div>
         </header>
         <div class="square">
             <div id="screenframe">
@@ -40,6 +40,7 @@
 
     // FUNÇÃO POR BOTÃO
     function timer() {
+        paused = false;
         ligado = true;
         clearInterval(inter);
         inter = setInterval(contar,1000);
@@ -68,17 +69,11 @@
     function onAndOFf(){
         var botao = document.getElementById('start') ;
         var bstop = document.getElementById('stop');
-        if(ligado===true) {
-           botao.classList.add('ligado');
-        } if(ligado===false) {
-        botao.classList.remove('ligado');
-        if(paused===true){ 
-            bstop.classList.add('pausado');
-        } else {
-            bstop.classList.remove('pausado');
-        }
+        if(ligado===true) {botao.classList.add('ligado')}
+        if(ligado===false) {botao.classList.remove('ligado')}
+        if(paused===true) {bstop.classList.add('pausado')}
+        if(paused===false) {bstop.classList.remove('pausado')}
     }
-}
 
 // Contador
     function contar() {
@@ -101,6 +96,10 @@
         if(hour>10){vhour = hour}
     }
 
+    function testa(e) {
+        document.addEventListener('click',e);
+        console.log(e);
+    }
 </script>
 </body>
 </html>
