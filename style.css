@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0 ;
+}
+body {
+    overflow: hidden;
+}
+
+.container {
+position: absolute;
+width: 100%;
+height: 99vh;
+background: linear-gradient(90deg, #0b0b0c, #17073b);
+mix-blend-mode: darken;
+border: 1px solid #000000;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+display: flex;
+justify-content: center;
+
+}
+
+
+header {
+position: fixed;
+display: flex;
+width: 100vw;
+height: 5vh;
+background: #8331c2d5;
+align-items: center;
+z-index: 3;
+backdrop-filter: blur(5px);
+    
+    
+}
+.square {
+    display: flex;
+    background-color: rgba(66, 15, 185, 0.644);
+    border: 2px solid rgb(30, 204, 82);
+    width: 400px;
+    height: 650px;
+    top: 7vh;
+    position: absolute;
+    justify-content: center;
+    align-self: center;
+    color:#ffffff;
+    border-radius: 20px;
+    font-size: 90px;
+    backdrop-filter: blur(5px);
+    flex-direction: column;
+    
+}
+
+.button > a {
+    text-decoration: none;
+    color : rgb(15, 207, 89);
+}
+
+.button {
+    position: absolute;
+    width: 90px;
+    display: flex;
+    height: 30px;
+    background: linear-gradient(90deg,#27C69F,#fff);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 10px 10px 100px 10px rgba(29, 25, 237, 0.55);
+    border-radius: 100px;
+    left: 5vw;   
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.button:hover {
+    background: #0dc20d;
+    box-shadow: 0px 4px 4px rgba(11, 167, 230, 0.733), inset 10px 10px 100px 10px rgba(255, 255, 255, 0.55);
+    
+}
+#screenframe > p {
+    display: flex;
+    border: 1px solid white;
+    position: relative;
+    border-radius: 20px;
+    width: 90%;
+    height: 13vh;
+    background-color: #71dbdf63;
+    justify-content: center;
+    margin: 0 auto;
+    top:-20vh;
+}
+.btnframe {
+    position: relative;
+    width: 90%;
+    height: 30%;
+    background-color: #614bc291;
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+    border-radius: 20px;
+    border: 1px solid lightgreen;
+}
+.btnframe > button {
+    margin: auto;
+    padding: 20px;
+    background-color: springgreen;
+    font-size: 15px;
+    color:rgb(54, 52, 211);
+    border-radius: 15px;
+}
+button:hover {
+    transform: scale(1.2);
+    filter: brightness(1.2);
+    background: linear-gradient(60deg,rgb(104, 96, 175),rgb(18, 191, 221));
+    color:#ffffff;
+}
