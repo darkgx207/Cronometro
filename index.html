@@ -10,7 +10,7 @@
 <body>
     <div class="container">
         <header>
-            <div class="button" onclick="alert('No momento ainda não possuo funcionalidade')"><a href="#">HOME</a></div>
+            <div class="button" ><a href="#">HOME</a></div>
         </header>
         <div class="square">
             <div id="screenframe">
@@ -22,84 +22,15 @@
                 <button id="clear" onclick="limpar();">Clear</button>
             </div>
         </div>
-        
-
     </div>
-
-<script>
-    // Declarações
-    let cont = document.getElementById('contador');
-    let inter;
-    let hour = 00;
-    let min = 00;
-    let sec = 00;
-    let ligado = false;
-    let paused = false;
-    let vsec,vmin,vhour;
-
-
-    // FUNÇÃO POR BOTÃO
-    function timer() {
-        paused = false;
-        ligado = true;
-        clearInterval(inter);
-        inter = setInterval(contar,1000);
-        onAndOFf();
-        
-    }
-
-    function limpar() {
-        ligado = false;
-        paused = false;
-        clearInterval(inter);
-        hour=0;min=0;sec=0;
-        hhmmss();
-        cont.innerText = `${vhour}:${vmin}:${vsec}`;
-        onAndOFf();
-    }
-
-    function parar() {
-        ligado = false;
-        paused = true;
-        clearInterval(inter);
-        onAndOFf();
-    }
-
-    // Verificador de Estado    
-    function onAndOFf(){
-        var botao = document.getElementById('start') ;
-        var bstop = document.getElementById('stop');
-        if(ligado===true) {botao.classList.add('ligado')}
-        if(ligado===false) {botao.classList.remove('ligado')}
-        if(paused===true) {bstop.classList.add('pausado')}
-        if(paused===false) {bstop.classList.remove('pausado')}
-    }
-
-// Contador
-    function contar() {
-            hhmmss();
-            sec++;
-            cont.innerText = `${vhour}:${vmin}:${vsec}`;
-    }
-
-    function hhmmss() {
-        if(sec === 60) { sec = 0; min++; }
-        if(min===60) { sec = 0; min = 0; hour++; }
-
-        if(sec<10){vsec = '0'+sec}
-        if(sec>10){vsec = sec}
-
-        if(min<10){vmin = '0'+min}
-        if(min>10){vmin = min}
-
-        if(hour<10){vhour = '0'+hour}
-        if(hour>10){vhour = hour}
-    }
-
-    function testa(e) {
-        document.addEventListener('click',e);
-        console.log(e);
-    }
-</script>
+<div class="popUp show">
+    <div class="inside">
+        <p id="text">No momento ainda não possuo nenhuma
+            funcionalidade.<br>Em breve teremos melhoras significativas.
+        </p>
+        <p id="xclose">X</p>
+    </div>
+</div>
+<script src="./script.js"></script>
 </body>
 </html>
